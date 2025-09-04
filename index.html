@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة مقدمي الخدمات الاستشارية</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            direction: rtl;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input {
+            margin: 5px;
+            padding: 5px;
+            width: 200px;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h2>قائمة مقدمي الخدمات الاستشارية</h2>
+    <div>
+        <input type="text" id="filterName" onkeyup="filterTable()" placeholder="ابحث بالاسم">
+        <input type="text" id="filterLicense" onkeyup="filterTable()" placeholder="ابحث برقم الترخيص">
+        <input type="text" id="filterCity" onkeyup="filterTable()" placeholder="ابحث بالمدينة">
+        <input type="text" id="filterExpiry" onkeyup="filterTable()" placeholder="ابحث بتاريخ الانتهاء">
+        <input type="text" id="filterService" onkeyup="filterTable()" placeholder="ابحث بمجال الخدمة">
+        <input type="text" id="filterEmail" onkeyup="filterTable()" placeholder="ابحث بالبريد الإلكتروني">
+        <input type="text" id="filterPhone" onkeyup="filterTable()" placeholder="ابحث برقم الجوال">
+    </div>
+    <table id="consultantTable">
+        <thead>
+            <tr>
+                <th>رقم الترخيص</th>
+                <th>الاسم</th>
+                <th>نوع الترخيص</th>
+                <th>المدينة</th>
+                <th>تاريخ الانتهاء</th>
+                <th>مجال الخدمات الاستشارية المرخصة</th>
+                <th>البريد الإلكتروني</th>
+                <th>رقم الجوال</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>FLFC0001</td>
+                <td>سهاد بنت عبدالعزيز بن عبدالرحمن المعيقل</td>
+                <td>استشاري مستقل</td>
+                <td>الرياض</td>
+                <td>06/10/2021</td>
+                <td>تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:a.faisal@samnc.com">a.faisal@samnc.com</a></td>
+                <td>0533316551</td>
+            </tr>
+            <tr>
+                <td>FCO001</td>
+                <td>مكيل لخدمات الاستشارات الغذائية</td>
+                <td>مكتب</td>
+                <td>الرياض</td>
+                <td>10/10/2021</td>
+                <td>تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:info@makeel.com">info@makeel.com</a></td>
+                <td>0556833544</td>
+            </tr>
+            <tr>
+                <td>FCO002</td>
+                <td>جدة انجاز الأولى لخدمات الاستشارات الغذائية</td>
+                <td>مكتب</td>
+                <td>جدة</td>
+                <td>12/10/2021</td>
+                <td>تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:mohammed.bazuhair@jeddahenjaz.com">mohammed.bazuhair@jeddahenjaz.com</a></td>
+                <td>0530355511</td>
+            </tr>
+            <tr>
+                <td>FCO003</td>
+                <td>إبراهيم عبدالله العريفي</td>
+                <td>مكتب</td>
+                <td>الرياض</td>
+                <td>20/10/2021</td>
+                <td>1. عمليات السلسلة الغذائية<br>2. تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:dr.ibrahimalarify@yahoo.com">dr.ibrahimalarify@yahoo.com</a></td>
+                <td>0505405892, 0534001234</td>
+            </tr>
+            <tr>
+                <td>FCO004</td>
+                <td>شركة الئق الطبية</td>
+                <td>مكتب</td>
+                <td>الرياض</td>
+                <td>20/10/2021</td>
+                <td>تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:Huda@laeq-med.com">Huda@laeq-med.com</a></td>
+                <td>0590099337</td>
+            </tr>
+            <tr>
+                <td>FCO005</td>
+                <td>مؤسسة فائز جميل عبدالغني ثقة</td>
+                <td>مكتب</td>
+                <td>جدة</td>
+                <td>19/10/2021</td>
+                <td>1. نظم ضمان وإدارة الجودة<br>2. تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:sec@althiga.com">sec@althiga.com</a></td>
+                <td>0545454538</td>
+            </tr>
+            <tr>
+                <td>FCO006</td>
+                <td>فهد علي الحماد</td>
+                <td>مكتب</td>
+                <td>الخبر</td>
+                <td>10/11/2021</td>
+                <td>1. نظم ضمان وإدارة الجودة<br>2. تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:info@fahce.sa">info@fahce.sa</a></td>
+                <td>0569048888, 0502492000</td>
+            </tr>
+            <tr>
+                <td>FCO007</td>
+                <td>خبرة الغذاء</td>
+                <td>مكتب</td>
+                <td>الرياض</td>
+                <td>25/11/2021</td>
+                <td>تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:foods.experts@gmail.com">foods.experts@gmail.com</a></td>
+                <td>0546938572, 0540933747</td>
+            </tr>
+            <tr>
+                <td>FLFC002</td>
+                <td>منال محمد عبدالحميد</td>
+                <td>استشاري مستقل</td>
+                <td>جدة</td>
+                <td>11/12/2021</td>
+                <td>تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:K_code@yahoo.com">K_code@yahoo.com</a></td>
+                <td>0560064216</td>
+            </tr>
+            <tr>
+                <td>FCO008</td>
+                <td>مؤسسة حسين حسن بن محمد صادق</td>
+                <td>مكتب</td>
+                <td>جدة</td>
+                <td>16/01/2022</td>
+                <td>تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:fncsaudi@gmail.com">fncsaudi@gmail.com</a></td>
+                <td>0592262277</td>
+            </tr>
+            <tr>
+                <td>FCO009</td>
+                <td>مؤسسة فهد محمد العزاز</td>
+                <td>مكتب</td>
+                <td>الدمام</td>
+                <td>19/12/2021</td>
+                <td>1. نظم ضمان وإدارة الجودة<br>2. تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:md@alwejhah.com">md@alwejhah.com</a></td>
+                <td>0554800888</td>
+            </tr>
+            <tr>
+                <td>FLFC003</td>
+                <td>هنادي صالح سليمان الأحيدب</td>
+                <td>استشاري مستقل</td>
+                <td>الرياض</td>
+                <td>21/01/2022</td>
+                <td>تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:fcalaulation@gmail.com">fcalaulation@gmail.com</a></td>
+                <td>0593653003</td>
+            </tr>
+            <tr>
+                <td>FCO010</td>
+                <td>شركة ركن اتحاد الخليج</td>
+                <td>مكتب</td>
+                <td>الرياض</td>
+                <td>03/01/2022</td>
+                <td>1. تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة<br>2. عمليات السلسلة الغذائية</td>
+                <td><a href="mailto:guner1.gu@gmail.com">guner1.gu@gmail.com</a></td>
+                <td>055480088</td>
+            </tr>
+            <tr>
+                <td>FLFC004</td>
+                <td>عبدالرحمن بن مبارك العجمي</td>
+                <td>استشاري مستقل</td>
+                <td>الرياض</td>
+                <td>26/03/2022</td>
+                <td>تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:cd.alajmi@hotmail.com">cd.alajmi@hotmail.com</a></td>
+                <td>0540666260</td>
+            </tr>
+            <tr>
+                <td>FCO011</td>
+                <td>مؤسسة عهود حسين عودة المسعودي</td>
+                <td>مكتب</td>
+                <td>تبوك</td>
+                <td>26/03/2022</td>
+                <td>تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:Dt.Ohood@outlook.sa">Dt.Ohood@outlook.sa</a></td>
+                <td>0554549905</td>
+            </tr>
+            <tr>
+                <td>FCO012</td>
+                <td>مكتب ثق بالابتكار</td>
+                <td>مكتب</td>
+                <td>جدة</td>
+                <td>07/04/2022</td>
+                <td>تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:hanaa@hotmail.com">hanaa@hotmail.com</a></td>
+                <td>0555730013</td>
+            </tr>
+            <tr>
+                <td>FLFC005</td>
+                <td>دينا عبدالرحمن محارب</td>
+                <td>استشاري مستقل</td>
+                <td>الرياض</td>
+                <td>14/03/2022</td>
+                <td>تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:Dina.muharib.15@aberdeen.ac.uk">Dina.muharib.15@aberdeen.ac.uk</a></td>
+                <td>0542000728</td>
+            </tr>
+            <tr>
+                <td>FLFC007</td>
+                <td>سالم سعيد عمران</td>
+                <td>استشاري مستقل</td>
+                <td>الرياض</td>
+                <td>23/05/2022</td>
+                <td>1. نظم ضمان وإدارة الجودة<br>2. عمليات السلسلة الغذائية</td>
+                <td><a href="mailto:Saam1981@gmail.com">Saam1981@gmail.com</a></td>
+                <td>0504778837</td>
+            </tr>
+            <tr>
+                <td>FLFC008</td>
+                <td>إبراهيم بن عبدالرحمن الشدي</td>
+                <td>استشاري مستقل</td>
+                <td>الرياض</td>
+                <td>23/05/2022</td>
+                <td>عمليات السلسلة الغذائية</td>
+                <td><a href="mailto:ibraheem.sh59@gmail.com">ibraheem.sh59@gmail.com</a></td>
+                <td>0504239818</td>
+            </tr>
+            <tr>
+                <td>FCO013</td>
+                <td>مكتب عبدالهادي بن ذياب بن سعيد العمري</td>
+                <td>مكتب</td>
+                <td>الجبيل</td>
+                <td>21/02/2022</td>
+                <td>تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:hadi@jilarabia.com">hadi@jilarabia.com</a></td>
+                <td>0533573258</td>
+            </tr>
+            <tr>
+                <td>FCO014</td>
+                <td>مكتب نجود إبراهيم عبدالعزيز عاشور</td>
+                <td>مكتب</td>
+                <td>جدة</td>
+                <td>20/05/2022</td>
+                <td>تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:akpabualkhair@gmail.com">akpabualkhair@gmail.com</a></td>
+                <td>0534343828</td>
+            </tr>
+            <tr>
+                <td>FLFC006</td>
+                <td>سماح بنت عبدالعزيز حسن ياسين</td>
+                <td>استشاري مستقل</td>
+                <td>جدة</td>
+                <td>04/02/2022</td>
+                <td>تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:samah.yassin.1406@gmail.com">samah.yassin.1406@gmail.com</a></td>
+                <td>0568899007</td>
+            </tr>
+            <tr>
+                <td>FLFC009</td>
+                <td>لينا بنت فريد عبدالحميد عقاد</td>
+                <td>استشاري مستقل</td>
+                <td>جدة</td>
+                <td>10/07/2022</td>
+                <td>تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:lfa.clinical.consultant@gmail.com">lfa.clinical.consultant@gmail.com</a></td>
+                <td>0508450030</td>
+            </tr>
+            <tr>
+                <td>FCO015</td>
+                <td>مكتب صالح الحميد</td>
+                <td>مكتب</td>
+                <td>الرياض</td>
+                <td>15/09/2022</td>
+                <td>تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:s.homaid77@gmail.com">s.homaid77@gmail.com</a></td>
+                <td>0503476646</td>
+            </tr>
+            <tr>
+                <td>FCO016</td>
+                <td>مكتب مسار الخبراء</td>
+                <td>مكتب</td>
+                <td>الرياض</td>
+                <td>26/09/2022</td>
+                <td>1. عمليات السلسلة الغذائية<br>2. تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:masar_alkhobara@outlook.com">masar_alkhobara@outlook.com</a></td>
+                <td>0555844987</td>
+            </tr>
+            <tr>
+                <td>FCO017</td>
+                <td>مكتب كيت و دايت- سنتر المحدودة</td>
+                <td>مكتب</td>
+                <td>الرياض</td>
+                <td>30/10/2022</td>
+                <td>تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:info@keto.com.sa">info@keto.com.sa</a></td>
+                <td>0505250719</td>
+            </tr>
+            <tr>
+                <td>FCO018</td>
+                <td>فرع شركة شيك سيتي فيرست</td>
+                <td>مكتب</td>
+                <td>جدة</td>
+                <td>19/10/2022</td>
+                <td>نظم ضمان وإدارة الجودة</td>
+                <td><a href="mailto:Yalsaedi@cristalstandard.com">Yalsaedi@cristalstandard.com</a></td>
+                <td>0544650677</td>
+            </tr>
+            <tr>
+                <td>FCO019</td>
+                <td>مركز عبدالله فهد المسند</td>
+                <td>مكتب</td>
+                <td>الرياض</td>
+                <td>26/10/2022</td>
+                <td>1. نظم ضمان وإدارة الجودة<br>2. عمليات السلسلة الغذائية</td>
+                <td><a href="mailto:mesned@mesned.com">mesned@mesned.com</a></td>
+                <td>0555408669</td>
+            </tr>
+            <tr>
+                <td>FLFC0010</td>
+                <td>نسرين علي بن عبدالرحمن عبدالله</td>
+                <td>استشاري مستقل</td>
+                <td>جدة</td>
+                <td>05/11/2022</td>
+                <td>تقديم الدراسات والبحوث الغذائية والتغذوية ذات العلاقة بعمل الهيئة</td>
+                <td><a href="mailto:nesreen.abdullah@gmail.com">nesreen.abdullah@gmail.com</a></td>
+                <td>0548832192</td>
+            </tr>
+            <tr>
+                <td>FCO020</td>
+                <td>مكتب بيت المجهر</td>
+                <td>مكتب</td>
+                <td>مكة المكرمة</td>
+                <td>18/12/2022</td>
+                <td>1. نظم ضمان وإدارة الجودة<br>2. عمليات السلسلة الغذائية</td>
+                <td><a href="mailto:bytmejhar35@gmail.com">bytmejhar35@gmail.com</a></td>
+                <td>0503001363</td>
+            </tr>
+            <tr>
+                <td>FCO021</td>
+                <td>مكتب عمر بن علوي بافقيه</td>
+                <td>مكتب</td>
+                <td>جدة</td>
+                <td>17/12/2022</td>
+                <td>1. نظم ضمان وإدارة الجودة<br>2. عمليات السلسلة الغذائية</td>
+                <td><a href="mailto:Omarbafakieh@fahiks.com">Omarbafakieh@fahiks.com</a></td>
+                <td>0565671818</td>
+            </tr>
+            <tr>
+                <td>FCO022</td>
+                <td>مكتب منال علي حسين عباس</td>
+                <td>مكتب</td>
+                <td>جدة</td>
+                <td>18/12/2022</td>
+                <td>نظم ضمان وإدارة الجودة</td>
+                <td><a href="mailto:Manalsh8000@gmail.com">Manalsh8000@gmail.com</a></td>
+                <td>0504607592</td>
+            </tr>
+            <tr>
+                <td>FCO023</td>
+                <td>مكتب نزار فؤاد وفا</td>
+                <td>مكتب</td>
+                <td>مكة المكرمة</td>
+                <td>02/01/2023</td>
+                <td>نظم ضمان وإدارة الجودة</td>
+                <td><a href="mailto:mo_omda2004@yahoo.com">mo_omda2004@yahoo.com</a></td>
+                <td>0555568422</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function filterTable() {
+            var inputName = document.getElementById("filterName").value.toLowerCase();
+            var inputLicense = document.getElementById("filterLicense").value.toLowerCase();
+            var inputCity = document.getElementById("filterCity").value.toLowerCase();
+            var inputExpiry = document.getElementById("filterExpiry").value.toLowerCase();
+            var inputService = document.getElementById("filterService").value.toLowerCase();
+            var inputEmail = document.getElementById("filterEmail").value.toLowerCase();
+            var inputPhone = document.getElementById("filterPhone").value.toLowerCase();
+            var table = document.getElementById("consultantTable");
+            var tr = table.getElementsByTagName("tr");
+
+            for (var i = 1; i < tr.length; i++) {
+                var tdName = tr[i].getElementsByTagName("td")[1];
+                var tdLicense = tr[i].getElementsByTagName("td")[0];
+                var tdCity = tr[i].getElementsByTagName("td")[3];
+                var tdExpiry = tr[i].getElementsByTagName("td")[4];
+                var tdService = tr[i].getElementsByTagName("td")[5];
+                var tdEmail = tr[i].getElementsByTagName("td")[6];
+                var tdPhone = tr[i].getElementsByTagName("td")[7];
+
+                if (tdName && tdLicense && tdCity && tdExpiry && tdService && tdEmail && tdPhone) {
+                    var textName = tdName.textContent || tdName.innerText;
+                    var textLicense = tdLicense.textContent || tdLicense.innerText;
+                    var textCity = tdCity.textContent || tdCity.innerText;
+                    var textExpiry = tdExpiry.textContent || tdExpiry.innerText;
+                    var textService = tdService.textContent || tdService.innerText;
+                    var textEmail = tdEmail.textContent || tdEmail.innerText;
+                    var textPhone = tdPhone.textContent || tdPhone.innerText;
+
+                    if (textName.toLowerCase().indexOf(inputName) > -1 &&
+                        textLicense.toLowerCase().indexOf(inputLicense) > -1 &&
+                        textCity.toLowerCase().indexOf(inputCity) > -1 &&
+                        textExpiry.toLowerCase().indexOf(inputExpiry) > -1 &&
+                        textService.toLowerCase().indexOf(inputService) > -1 &&
+                        textEmail.toLowerCase().indexOf(inputEmail) > -1 &&
+                        textPhone.toLowerCase().indexOf(inputPhone) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
